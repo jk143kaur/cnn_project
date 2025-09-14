@@ -6,6 +6,7 @@ from cnn_project import SimpleCNN, classes
 
 app = Flask(__name__)
 
+# Load trained model
 model = SimpleCNN()
 model.load_state_dict(torch.load("cnn_cifar10.pth", map_location='cpu'))
 model.eval()

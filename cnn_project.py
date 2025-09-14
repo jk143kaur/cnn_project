@@ -60,8 +60,9 @@ for epoch in range(10):
         loss.backward()
         optimizer.step()
         running_loss += loss.item()
-    print(f"Epoch {epoch+1}, Loss: {running_loss/len(trainloader)}")
+    print(f"Epoch {epoch+1}, Loss: {running_loss/len(trainloader):.4f}")
 
+# Save model
 torch.save(model.state_dict(), "cnn_cifar10.pth")
 
 # 4️⃣ Evaluation
